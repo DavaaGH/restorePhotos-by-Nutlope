@@ -117,26 +117,6 @@ const Home: NextPage = () => {
 
       <Header photo={session?.user?.image || undefined} />
       <main className='flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-4 sm:mb-0 mb-8'>
-        <a
-          className='border shadow-xl flex max-w-md rounded-xl mb-6 hover:scale-[1.02] transition duration-300 ease-in-out'
-          href='https://www.roomgpt.io/'
-          target='_blank'
-        >
-          <img
-            src='/roomgpt-ad.png'
-            alt='roomgpt ad'
-            className='w-48 rounded-lg'
-          />
-          <div className='flex gap-3 flex-col py-3 sm:pr-4 pr-2'>
-            <h3 className='text-left sm:text-md text-sm text-gray-700'>
-              Revolutionize your space with the world's first AI interior
-              designer, 100% free to try.{' '}
-            </h3>
-            <p className='text-left sm:text-sm text-xs text-gray-500 opacity-50 font-medium'>
-              ROOMGPT.IO
-            </p>
-          </div>
-        </a>
         <h1 className='mx-auto max-w-4xl font-display text-4xl font-bold tracking-normal text-slate-900 sm:text-6xl mb-5'>
           Restore any face photo
         </h1>

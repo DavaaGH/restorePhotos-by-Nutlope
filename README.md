@@ -1,4 +1,4 @@
-# [RestorePhotos.io](https://restorephotos.io/)
+# RestorePhotos.io
 
 This project restores old face photos using AI. Watch the [4 minute explainer video](https://twitter.com/nutlope/status/1614794731396931585) to see how I built this or see the [15 second demo](https://twitter.com/nutlope/status/1612488923716136962).
 
@@ -47,15 +47,3 @@ npm run dev
 ## One-Click Deploy
 
 Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Nutlope/restorePhotos&env=REPLICATE_API_KEY&project-name=face-photo-restorer&repo-name=restore-photos)
-
-## Powered by
-
-This example is powered by the following services:
-
-- [Replicate](https://replicate.com) (AI API)
-- [Bytescale](https://www.bytescale.com/) (storage + image processing API)
-- [Vercel](https://vercel.com) (hosting, serverless functions, analytics)
-- [Auth.js](https://authjs.dev/) + [Neon](https://neon.tech/) (auth + DB)
-- [Upstash](https://upstash.com/) Redis (rate limiting)

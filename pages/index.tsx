@@ -38,15 +38,6 @@ const Home: NextPage = () => {
           memories can live on. 100% free – restore your photos today.
         </p>
         <div className='flex justify-center space-x-4'>
-          <a
-            className='bg-white rounded-xl text-black font-medium px-4 py-3 sm:mt-10 mt-8 hover:bg-gray-100 border'
-            href='https://www.roomgpt.io/'
-            target='_blank'
-            rel='noreferrer'
-          >
-            Check out roomGPT
-          </a>
-
           <Link
             className='bg-black rounded-xl text-white font-medium px-4 py-3 sm:mt-10 mt-8 hover:bg-black/80'
             href='/restore'
