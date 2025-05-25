@@ -14,69 +14,55 @@ const Home: NextPage = () => {
         <title>Face Photo Restorer</title>
       </Head>
       <Header />
-      <main className='flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-20'>
-        <a
-          href='https://twitter.com/nutlope/status/1704894145003741611'
-          target='_blank'
-          rel='noreferrer'
-          className='border rounded-2xl py-1 px-4 text-slate-500 text-sm mb-5 hover:scale-105 transition duration-300 ease-in-out'
-        >
-          Used by over <span className='font-semibold'>470,000</span> happy
-          users
-        </a>
-        <h1 className='mx-auto max-w-4xl font-display text-5xl font-bold tracking-normal text-slate-900 sm:text-7xl'>
-          Restoring old photos{' '}
-          <span className='relative whitespace-nowrap text-[#3290EE]'>
-            <SquigglyLines />
-            <span className='relative'>using AI</span>
-          </span>{' '}
-          for everyone.
+      <main className='flex flex-1 w-full flex-col items-center justify-center text-center px-4 sm:mt-28 mt-20'>
+        <h1 className='mx-auto max-w-4xl font-display text-6xl font-extrabold tracking-tight text-slate-900 sm:text-7xl md:text-8xl'>
+          AI-POWERED PHOTO RESTORATION.
         </h1>
 
-        <p className='mx-auto mt-12 max-w-xl text-lg text-slate-700 leading-7'>
-          Have old and blurry face photos? Let our AI restore them so those
-          memories can live on. 100% free – restore your photos today.
+        <p className='mx-auto mt-10 max-w-xl text-xl text-slate-600 leading-relaxed md:text-2xl'>
+          Revitalize your old, blurry face photos with our free AI restoration tool. Bring your memories back to life.
         </p>
-        <div className='flex justify-center space-x-4'>
+        <div className='flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-6 mt-12'>
+          <Link
+            className='bg-black text-white font-bold py-3 px-8 uppercase tracking-wider rounded-sm hover:bg-gray-800 transition duration-150 ease-in-out text-lg sm:text-base'
+            href='/restore'
+          >
+            Restore your photos
+          </Link>
           <a
-            className='bg-white rounded-xl text-black font-medium px-4 py-3 sm:mt-10 mt-8 hover:bg-gray-100 border'
+            className='text-slate-500 hover:text-slate-700 underline sm:mt-0'
             href='https://www.roomgpt.io/'
             target='_blank'
             rel='noreferrer'
           >
             Check out roomGPT
           </a>
-
-          <Link
-            className='bg-black rounded-xl text-white font-medium px-4 py-3 sm:mt-10 mt-8 hover:bg-black/80'
-            href='/restore'
-          >
-            Restore your photos
-          </Link>
         </div>
-        <div className='flex justify-between items-center w-full flex-col sm:mt-10 mt-6'>
-          <div className='flex flex-col space-y-10 mt-4 mb-16'>
-            <div className='flex sm:space-x-2 sm:flex-row flex-col'>
-              <div>
-                <h2 className='mb-1 font-medium text-lg'>Original Photo</h2>
-                <Image
-                  alt='Original photo of my bro'
-                  src='/michael.jpg'
-                  className='w-96 h-96 rounded-2xl'
-                  width={400}
-                  height={400}
-                />
-              </div>
-              <div className='sm:mt-0 mt-8'>
-                <h2 className='mb-1 font-medium text-lg'>Restored Photo</h2>
-                <Image
-                  alt='Restored photo of my bro'
-                  width={400}
-                  height={400}
-                  src='/michael-new.jpg'
-                  className='w-96 h-96 rounded-2xl sm:mt-0 mt-2'
-                />
-              </div>
+        <div className='w-full max-w-5xl mx-auto mt-16 sm:mt-24'>
+          <div className='flex flex-col sm:flex-row justify-center items-start gap-8 sm:gap-6 md:gap-10'>
+            <div className='flex-1 text-center'>
+              <h2 className='text-2xl font-bold text-slate-800 mb-4'>
+                Original Photo
+              </h2>
+              <Image
+                alt='Original photo of a man'
+                src='/michael.jpg'
+                className='border border-gray-200 shadow-sm w-full h-auto max-w-[400px] mx-auto'
+                width={400}
+                height={400}
+              />
+            </div>
+            <div className='flex-1 text-center mt-8 sm:mt-0'>
+              <h2 className='text-2xl font-bold text-slate-800 mb-4'>
+                Restored Photo
+              </h2>
+              <Image
+                alt='Restored photo of a man'
+                width={400}
+                height={400}
+                src='/michael-new.jpg'
+                className='border border-gray-200 shadow-sm w-full h-auto max-w-[400px] mx-auto'
+              />
             </div>
           </div>
         </div>

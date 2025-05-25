@@ -73,61 +73,57 @@ export function Testimonials() {
   return (
     <section
       id='testimonials'
-      aria-label='What our customers are saying'
-      className='py-10'
+      aria-label='What users are saying'
+      className='py-12 sm:py-16 bg-slate-50' // Added a light background for the section
     >
-      <div className='mx-auto px-4 sm:px-6 lg:px-8'>
+      <div className='mx-auto max-w-6xl px-4 sm:px-6 lg:px-8'>
         <div className='mx-auto md:text-center'>
-          <h1 className='mx-auto max-w-4xl font-display text-4xl font-bold tracking-normal text-slate-900 sm:text-6xl'>
-            Loved by many worldwide.
-          </h1>
-          <p className='mx-auto mt-6 max-w-xl text-lg text-slate-700 leading-7'>
-            See what our 300,000+ users are saying about the product.
+          <h2 className='font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl'>
+            Loved by users worldwide.
+          </h2>
+          <p className='mt-4 text-base text-slate-600 sm:text-lg'>
+            Here's what some of our users are saying about the product.
           </p>
         </div>
         <ul
           role='list'
-          className='mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-16 lg:max-w-none lg:grid-cols-3'
+          className='mx-auto mt-12 grid max-w-md grid-cols-1 gap-6 sm:gap-8 md:mt-16 md:max-w-2xl md:grid-cols-2 lg:max-w-none lg:grid-cols-3'
         >
-          {testimonials.map((column, columnIndex) => (
-            <li key={columnIndex}>
-              <ul role='list' className='flex flex-col gap-y-6 sm:gap-y-8'>
-                {column.map((testimonial, testimonialIndex) => (
-                  <li
-                    key={testimonialIndex}
-                    className='hover:scale-105 transition duration-300 ease-in-out'
-                  >
-                    <a href={testimonial.link} target='_blank' rel='noreferrer'>
-                      <figure className='relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10'>
-                        <blockquote className='relative'>
-                          <p className='text-lg tracking-tight text-slate-900'>
-                            "{testimonial.content}"
-                          </p>
-                        </blockquote>
-                        <figcaption className='relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6'>
-                          <div>
-                            <div className='font-display text-base text-slate-900'>
-                              {testimonial.author.name}
-                            </div>
-                            <div className='mt-1 text-sm text-slate-500'>
-                              {testimonial.author.role}
-                            </div>
-                          </div>
-                          <div className='overflow-hidden rounded-full bg-slate-50'>
-                            <Image
-                              className='h-14 w-14 object-cover'
-                              src={testimonial.author.image}
-                              alt='picture of the testimonial author'
-                              width={56}
-                              height={56}
-                            />
-                          </div>
-                        </figcaption>
-                      </figure>
-                    </a>
-                  </li>
-                ))}
-              </ul>
+          {testimonials.flat().map((testimonial, testimonialIndex) => ( // Flattened array for direct mapping
+            <li key={testimonialIndex}>
+              <a
+                href={testimonial.link}
+                target='_blank'
+                rel='noopener noreferrer' // Added noopener for security
+                className='block h-full' // Make anchor fill the li for clickability
+              >
+                <figure className='h-full flex flex-col border border-slate-300 bg-white p-6'>
+                  <blockquote className='flex-grow'>
+                    <p className='text-base text-slate-700 leading-relaxed'>
+                      {testimonial.content}
+                    </p>
+                  </blockquote>
+                  <figcaption className='mt-6 flex items-center justify-start border-t border-slate-200 pt-5'>
+                    <div className='overflow-hidden bg-slate-100 mr-4'>
+                      <Image
+                        className='h-10 w-10 object-cover' // Image slightly smaller, no rounded corners
+                        src={testimonial.author.image}
+                        alt={`Photo of ${testimonial.author.name}`} // More descriptive alt
+                        width={40}
+                        height={40}
+                      />
+                    </div>
+                    <div>
+                      <div className='font-semibold text-sm text-slate-900'>
+                        {testimonial.author.name}
+                      </div>
+                      <div className='text-xs text-slate-500'> 
+                        {testimonial.author.role}
+                      </div>
+                    </div>
+                  </figcaption>
+                </figure>
+              </a>
             </li>
           ))}
         </ul>
